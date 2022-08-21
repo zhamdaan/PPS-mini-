@@ -1,42 +1,64 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-struct {
-    int no [100] ; 
-    char A [100][100]
-    char B [100][100] ;
-} ; 
+#include<string.h>
+char A [10][100] ;
+ char C [10][100] ;
 int test (int n) ;
-int writed (char A []);
-
+int update ();
 
 int main()
 { int input=0 , numberoftimes=0; 
+int i = 0 ;
+printf ( "enter data") ;
+while (i<10)
+ { gets (A[i]);
+  gets (C[i]); i++ ;}
      while (input!=3)
      {
-printf ("MENU 
- Provide Input 
- 
- 1. Test 
- 2. Add input 
- 3. close ");
+printf (" MENU  \n\n Provide Input \n 1. Test \n 2. Update Input\n 3. close ");
  scanf ("%d",&input);
  if (input==1)
  {scanf("%d",&numberoftimes);
  test(numberoftimes);}
- else if (input==2)
- {}
- else if (input==3)
- {}
+ else if (input==2){update ();
+     
+     while (input!=3)
+     {
+printf (" MENU  \n\n Provide Input \n 1. Test \n 2. Update Input\n 3. close ");
+ scanf ("%d",&input);
+ if (input==1)
+ {scanf("%d",&numberoftimes);
+ test(numberoftimes);}
+ else if (input==2){update ();}
+ else if (input==3){printf ("good bye");} 
+     } }
+ else if (input==3){printf ("good bye");}
+ 
      }
 
 
 
     return 0;
 }
+int update ()
+
+{ int i = 0 ; 
+for  (i=0 ; i<10 ; i ++ );
+ { scanf ("%s" , A[i]);
+   scanf ("%s", C[i]); }
+}
+
 int test (int n)
-{ int a,i=0 ;
+{ int a,i=0 ; char B [20]; 
 for  (i=0;i<n;i++)
 {
-a = rand () % 100;
-printf( " %s "  , puts (A[a][])) ;
+a = rand () % 10;
+printf( " %s" , (A[a])) ;
+scanf ("%s", B);
+if (strcmp (C[a],B)==0 )
+{ printf ("correct"); }
+else 
+{ printf ( "\n incorrect . correct answer is %s",C[a]); } 
+}
+}
